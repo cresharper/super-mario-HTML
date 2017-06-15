@@ -1,0 +1,1 @@
+$(document).ready(function(){var o=6;$(document).keydown(function(i){39===i.which?(o>=6&&(o+=6),$(".mario").css("left",o)):37===i.which?(o-=6,$(".mario").css("left",o)):32===i.which&&($(".mario").addClass("jump"),setTimeout(function(){$(".mario").removeClass("jump")},400))})});
