@@ -13,7 +13,7 @@ gulp.task('scripts', function() {
 	gulp.src('dev/js/*.js')
 	.pipe(uglify())
 	.pipe(gulp.dest('build/js'))
-	// .pipe(browserSync.stream());
+	.pipe(browserSync.reload({ stream: true }));
 });
 
 //styles build/minification
@@ -21,7 +21,7 @@ gulp.task('styles', function() {
 	return sass('dev/scss/styles.scss')
 	.pipe(cleanCSS())
 	.pipe(gulp.dest('build/css'))
-	// .pipe(browserSync.stream());
+	.pipe(browserSync.reload({ stream: true }));
 });
 
 //server + file watching 
