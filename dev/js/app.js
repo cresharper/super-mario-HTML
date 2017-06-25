@@ -1,19 +1,30 @@
 $(document).ready(function() {
 
-  var pos = 6;
+  // ================================
+  // CONTROLS
+  // ================================
+
+  // default position
+  var pos = 0;
 
     $(document).keydown(function(e) {
 
     if (e.which === 39) {
-        if (pos >= 6) {
-            pos += 6;
-        }
-        $(".mario").css('left', pos);
+        pos += 6;
+        $(".mario").css({
+            'left':pos, 
+            'transform':'scaleX(-1)'
+        });
     } 
+
     else if (e.which === 37) {
         pos -= 6;
-        $(".mario").css('left', pos);
+        $(".mario").css({
+            'left':pos, 
+            'transform':'scaleX(1)'
+        });
     } 
+
     else if (e.which === 32) { 
         $(".mario").addClass('jump');
 
