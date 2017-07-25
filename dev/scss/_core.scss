@@ -13,6 +13,7 @@ body {
 // Vars
 //======//======//======//======
 $floorheight: 35px;
+$headercolor: #1c8414;
 
 //======//======//======//======
 // Screen
@@ -42,10 +43,39 @@ $floorheight: 35px;
   background:url('/img/scenery.gif');
 }
 
+@keyframes theCloudOne {
+    0%   {left: 0;}
+    50%   {left: 100px;}
+    60%   {left: 120px;}
+    70%   {left: 140px;}
+    80%   {left: 115px;}
+    90%   {left: 91px;}
+    95%   {left: 17px;}
+    100% {left: 0;}
+}
+
+@keyframes theCloudTwo {
+    0%   {left: 0;}
+    50%   {left: 50px;}
+    60%   {left: 160px;}
+    70%   {left: 140px;}
+    80%   {left: 80px;}
+    90%   {left: 40px;}
+    100% {left: 0;}
+}
+
 .clouds {
   width: 107px;
   height: 46px;
   background-position: -138px -52px;
+  animation: theCloudOne 25s infinite;
+  transition: 0.3s ease;
+}
+
+.clouds--2 {
+  position: absolute;
+  top: 3rem;
+  animation: theCloudTwo 55s infinite;
 }
 
 .tube--large-green {
@@ -82,7 +112,7 @@ $floorheight: 35px;
   position: absolute;
   bottom: $floorheight;
   background-position-x: 350px;
-  // transition: 0.2s ease;
+  z-index: 5;
   transform: scaleX(-1);
 }
 

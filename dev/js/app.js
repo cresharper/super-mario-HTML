@@ -1,6 +1,7 @@
 $(document).ready(function() {
+
   // ================================
-  // CONTROLS
+  // GAME CONTROLS
   // ================================
 
   // default position
@@ -12,11 +13,13 @@ $(document).ready(function() {
   // obstacle positioning
   var tubePosition = $(".tube--large-green").position().left;
 
-  $(".clouds").animate({
-     left: "70",
-  }, 4000);
-
     $(document).keydown(function(e) {
+
+    var panelActive = $(".onload-panel").css('display');
+
+    if (panelActive === "block") {
+      return false;
+    }
 
     if (e.which === 39) {
         pos += 6;
@@ -40,10 +43,6 @@ $(document).ready(function() {
             setTimeout(function() {
                 $(".mario").removeClass('jump');
             }, 400);
-            
-            if(marioPosition === tubePosition ) {
-              console.log("touching tube");
-            }
         } 
 
     // ================================
@@ -55,4 +54,16 @@ $(document).ready(function() {
     });
     // KeyDown Closer
 
+    // close intro panel and play
+    $(".close").click(function(e) {
+      e.preventDefault();
+      $(".onload-panel").fadeOut()
+    }); 
+
+    // close window on click
+    var closeButton = document.getElementById("exit-game-btn");
+    closeButton.addEventListener("click", closeGameWindow);
+    function closeGameWindow() {
+      window.history.back();
+    }    
 });

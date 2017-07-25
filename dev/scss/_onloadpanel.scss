@@ -1,0 +1,52 @@
+// on load page panel
+
+.onload-panel {
+	position: absolute;
+	top: 8rem;
+	left: 0;
+	right: 0;
+	width:800px;
+	margin: 0 auto;
+	padding: 2rem;
+	border: 5px solid #fff;
+	border-radius: 30px;
+
+	font-family: supermario;
+
+	h1 {
+		color: $headercolor;
+	}
+
+	h1, h2, a, p {
+		text-align: center;
+	}
+
+	.onload-panel--close {
+		text-align: center;
+	}
+
+	.onload-panel--close {
+		text-decoration: none;
+    	color: #fff;
+    	border-radius: 100%;
+    	padding: 0.2em;
+    	font-size: 24px;
+	}
+
+	.onload-panel__links {
+		padding-top: 2em;
+		
+		a {
+			text-decoration: none;
+			color: red;
+		}
+	}
+
+	div > a:first-child {
+		text-align: left;
+	}
+
+	div > a:last-child {
+		float: right;
+	}
+}
