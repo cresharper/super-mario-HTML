@@ -2,3 +2,6 @@ name: Super Mario in HTML
 
 # files to be ignored in build
 exclude: [gulpfile.js, package.json, README.md, node_modules, dev]
+
+# For github hosted site
+baseurl: '/super-mario-HTML'
